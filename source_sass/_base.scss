@@ -1,7 +1,10 @@
 // Add any custom Sass & CSS here
+video {
+    width: 100%;
+}
 
-body{
-	@include breakpoint(medium down){
-		background: red !important;
-	}
+img {
+    text-align: center;
+    height: 200px;
+    width: 100%;
 }
