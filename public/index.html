@@ -6,25 +6,29 @@
         <title>Le Chef</title>
 
         <!-- Stylesheets -->
-        <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Dancing+Script|Fira+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./css/styles.css">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css"/>
         <link rel="icon" type="image/png" sizes="32x32" href="./data/pics/favicon.ico">
     </head>
     <body>
         <!-- Sticky -->
-        <div class="top-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <div class="top-bar responsive-bar-icons" data-responsive-toggle="main-menu" data-hide-for="medium">
             <button class="menu-icon" type="button" data-toggle></button>
             <div class="title-bar-title">Menu</div>
         </div>
         <div data-sticky-container>
-            <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0;" style="width:100%">
+            <div class="top-bar " id="main-menu" data-sticky data-options="marginTop:0;" style="width:100%">
                 <div class="top-bar-left">
                     <ul class="menu">
                         <li><a href="#">Le Chef</a></li>
-                        <li><a href="#">One</a></li>
-                        <li><a href="#">Two</a></li>
-                        <li><a href="#">Three</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Register</a></li>
                     </ul> 
                 </div>
                 <div class="top-bar-right">
@@ -39,7 +43,7 @@
             </div>
         </div>
         <!-- Banner -->
-        <section id="main-section-home" class="row text-center">
+        <section id="main-section-home" class="row text-center full-width">
             <h2 class="fancy">Learn how to make a dinner for loved ones that's worth eating!</h2>
         </section>
         <section class="video">
@@ -48,39 +52,96 @@
                 Your browser does not support the video tag.
             </video>    
         </section>
-        <section id="main-section-how-works" class="row text-center">
-            <h3>How it works</h3>
+        <section id="main-section-how-works" class="row text-center ">
+            <h2>How it works</h2>
             <p>Our network of professional chefs across the globe come to your home and teach you how to cook a delicious dish from their most popular restaurants. Each lesson is personally prepared by the chefs' themselves and are offered at reasonable prices. All you need to do is make some time!</p>
+            <hr>
         </section>
-        <section class="row text-center">
+        <section id="main-section-modals" class="row text-center full-width ">
             <div class="small-12 medium-4 large-4 columns">
-                <img src="./data/pics/chef-3.png">
+                <img src="./data/pics/chef.svg">
                 <hr>
                 <h2>Select a Chef</h2>
-                <p>Select a professional chef from a restaurant near you.</p>
+                <p>Register as a member and use our app to select a professional chef from a restaurant near you.</p>
             </div>
             <div class="small-12 medium-4 large-4 columns">
-                <img src="./data/pics/dish.png">
+                <img src="./data/pics/dish.svg">
                 <hr>
                 <h2>Choose a Lesson</h2>
                 <p>Choose from a series of lessons that have been personally prepared by the chefs' themselves.</p>
             </div>
             <div class="small-12 medium-4 large-4 columns">
-                <img src="./data/pics/calendar.png">
+                <img src="./data/pics/calendar.svg">
                 <hr>
                 <h2>Schedule a Day</h2>
                 <p>Schedule a day that works for both yourself and the chef using an online calendar.</p>
             </div>
         </section>
-        <section id="main-section-reviews" class="row">
-            
+        <section id="background-beg">
         </section>
-
-
-
+        <section id="main-section-reviews" class="row text-center full-width ">
+            <br>
+            <h3>Read our reviews and see what members have made!</h3>
+            <div class="carousel">
+                <div class="one-time">
+                    <div class="row review-img full-width">
+                        <div class="small-12 medium-4 large-4 columns">
+                            <img src="./data/pics/guy.png">
+                            <h5>Guy</h5>
+                            <hr>
+                            <p>No matter how hard I cooked, I always seemed to fail. When I signed up for this service, it changed all of that. I was paired with a mentor from the famous Burgr, which is down the street from me! I've learned so much and now I can make food that my family loves to eat!</p>
+                        </div>
+                        <div class="small-12 medium-4 large-4 columns">
+                            <img src="./data/pics/gordan.png">
+                            <h5>Ramsay</h5>
+                            <hr>
+                            <p>It's so good, I'm in denial!</p>
+                        </div>
+                        <div class="small-12 medium-4 large-4 columns">
+                            <img src="./data/pics/betty.png">
+                            <h5>Betty</h5>
+                            <hr>
+                            <p>The chef who came to my home was so patient with me! Clearly, Le Chef has a great network of professional members and it makes me proud to be part of that community! I'd recommend this to anyone wanting to make a five-star meal.</p>
+                        </div>
+                    </div>
+                    <div class="row dish-img full-width">
+                        <div class="small-12 medium-6 large-6 columns">
+                            <img src="./data/pics/dish-1.png">
+                            <h4 class="fancy">Simple and Delicious!</h4>
+                        </div>
+                        <div class="small-12 medium-6 large-6 columns">
+                            <img src="./data/pics/dish-2.png">
+                            <h4 class="fancy">Colorful and Aromatic!</h4>
+                        </div>
+                    </div>
+                    <div class="row dish-img full-width">
+                        <div class="small-12 medium-6 large-6 columns">
+                            <img src="./data/pics/dish-3.png">
+                            <h4 class="fancy">Classy and Flavorful!</h4>
+                        </div>
+                        <div class="small-12 medium-6 large-6 columns">
+                            <img src="./data/pics/dish-4.png">
+                            <h4 class="fancy">Healthy and affordable!</h4>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="background-end">
+        </section>
+        <div class="footer ">
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a>&copy; LeChefCompany</a></li>
+                <li><a>Designed by: Andy Vuong</a></li>
+            </ul>
+        </div>
         <!-- Scripts -->
-
         <script src="./lib/jquery-2.1.3.min/index.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
         <script src="./foundation6_lib/js/foundation.min.js"></script>
         <script src="./js/script.js"></script>
         <script>

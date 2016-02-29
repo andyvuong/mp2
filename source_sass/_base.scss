@@ -1,10 +1,154 @@
 // Add any custom Sass & CSS here
 video {
     width: 100%;
+    border: 3px solid $turq_light;
+    border-top: 4px solid $turq_light;
 }
 
 img {
     text-align: center;
     height: 200px;
     width: 100%;
+}
+
+a {
+    color: white;
+}
+
+hr {
+    @include border-color($turq_light);
+    border-top: 2px solid $turq_light;
+}
+
+section {
+    width: 100%;
+}
+
+#main-section-home {
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+#main-section-modals .columns:hover {
+    background-color: $turq_med;
+    color: $red;
+    cursor: pointer;
+
+    hr {
+        @include border-color($red);
+        border-top: 2px solid $red;
+    }
+
+}
+
+section h1, h2, h3, h4, h5, h6, p {
+    font-family: $primary-font;
+}
+
+.main-style {
+    font-family: $primary-font;
+}
+
+.full-width {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.responsive-bar-icons {
+    color: white;
+}
+
+#background-beg {
+    background: url(../data/pics/background-1.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+    height: 150px;
+}
+
+#background-end {
+    background: url(../data/pics/background-1.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    position: relative;
+    z-index: -1;
+    height: 150px;
+}
+
+.carousel {
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    margin-top: 1%;
+
+    .review-img {
+        img {
+            @include wh(166px, 138px);
+            border-radius: 50%;
+            border: 3px solid $turq_med;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+    }
+
+    .dish-img {
+        img {
+            @include wh(350px, 300px);
+            margin:auto;
+            border-radius: 50%;
+            border: 3px solid $turq_med;
+            margin-top: 2%;
+            margin-bottom: 5%;
+        }
+    }
+}
+
+.slick-prev:before, .slick-next:before { 
+    color: #222 !important;
+}
+
+.fancy {
+    font-family: $pretty-font;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.top-bar {
+    background-color: $turq_med;
+    @include fontSize(1.1em);
+    font-family: $primary-font;
+}
+
+.footer {
+    @include wh(100%, 100px);
+    background-color: $turq_med;
+    text-align: center;
+
+    ul {
+        @include vertical-align();
+        margin: auto;
+        list-style-type: circle;
+        font-family: $primary-font;
+
+        li {
+            @include fontSize(1.25em);
+            display: inline-block;
+            padding: 0 30px 0 10px;
+            right: 0;
+            text-align: center;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
 }

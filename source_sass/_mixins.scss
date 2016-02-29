@@ -1,1 +1,26 @@
 // Insert your mixins
+@mixin vertical-align() {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin border-color($color) {
+    border-color: $color;
+    background-color: $color;
+    color: $color;
+}
+
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin set-margin-sides() {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin fontSize($size) {
+    font-size: $size;
+}
