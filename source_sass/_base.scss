@@ -1,8 +1,18 @@
 // Add any custom Sass & CSS here
 video {
     width: 100%;
-    border: 3px solid $turq_light;
-    border-top: 4px solid $turq_light;
+    border: 3px solid $turq_med;
+    border-top: 4px solid $turq_med;
+
+    -webkit-animation: fade-in 1s; 
+       -moz-animation: fade-in 1s; 
+        -ms-animation: fade-in 1s; 
+         -o-animation: fade-in 1s; 
+            animation: fade-in 1s;
+}
+
+section h1, h2, h3, h4, h5, h6, p {
+    font-family: $primary-font;
 }
 
 img {
@@ -15,6 +25,10 @@ a {
     color: white;
 }
 
+a:visited, a:active, a:hover, a:focus {
+  color: white !important;
+}
+
 hr {
     @include border-color($turq_light);
     border-top: 2px solid $turq_light;
@@ -24,24 +38,50 @@ section {
     width: 100%;
 }
 
-#main-section-home {
-    text-shadow: 4px 4px 4px #aaa;
+.active {
+    background-color: $green_medium;
 }
 
-#main-section-modals .columns:hover {
-    background-color: $turq_med;
-    color: $red;
-    cursor: pointer;
+#main-section-home {
+    text-shadow: 4px 4px 4px #aaa;
 
-    hr {
-        @include border-color($red);
-        border-top: 2px solid $red;
+    h2 {
+    -webkit-animation: fade-in 3s; 
+       -moz-animation: fade-in 3s; 
+        -ms-animation: fade-in 3s; 
+         -o-animation: fade-in 3s; 
+            animation: fade-in 3s;
+    }
+}
+
+#main-section-how-works {
+    h2 {
+        @include fontSize(3.0em);
+    }
+
+    p {
+        @include fontSize(1.1em);
     }
 
 }
 
-section h1, h2, h3, h4, h5, h6, p {
-    font-family: $primary-font;
+#main-section-modals {
+
+    .columns:hover {
+        background-color: $turq_med;
+        color: $red;
+        cursor: pointer;
+
+        hr {
+            @include border-color($red);
+            border-top: 2px solid $red;
+        }
+    }
+
+    .columns  {
+        height: 100%;
+    }
+
 }
 
 .main-style {
@@ -123,8 +163,20 @@ section h1, h2, h3, h4, h5, h6, p {
 
 .top-bar {
     background-color: $turq_med;
-    @include fontSize(1.1em);
     font-family: $primary-font;
+    @include fontSize(1.2em);
+
+    .menu-text {
+        color: black;
+    }
+}
+
+.sticky-container {
+    background-color: $turq_med !important;
+}
+
+.reveal {
+    border: 3px solid $turq_med;
 }
 
 .footer {
@@ -151,4 +203,19 @@ section h1, h2, h3, h4, h5, h6, p {
             text-decoration: none;
         }
     }
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-moz-keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-webkit-keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

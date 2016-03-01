@@ -12,28 +12,29 @@
 
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.min.css">
         <link rel="icon" type="image/png" sizes="32x32" href="./data/pics/favicon.ico">
     </head>
-    <body>
+    <body data-magellan-target="first" id="first">
         <!-- Sticky -->
         <div class="top-bar responsive-bar-icons" data-responsive-toggle="main-menu" data-hide-for="medium">
             <button class="menu-icon" type="button" data-toggle></button>
             <div class="title-bar-title">Menu</div>
         </div>
         <div data-sticky-container>
-            <div class="top-bar " id="main-menu" data-sticky data-options="marginTop:0;" style="width:100%">
+            <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0;" style="width:100%">
                 <div class="top-bar-left">
-                    <ul class="menu">
-                        <li><a href="#">Le Chef</a></li>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">How It Works</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Register</a></li>
+                    <ul class="menu" data-magellan>
+                        <li class="menu-text">Le Chef</li>
+                        <li><a href="#first">Home</a></li>
+                        <li><a href="#second">How It Works</a></li>
+                        <li><a href="#third">Reviews</a></li>
+                        <li><a data-toggle="modal-register">Register</a></li>
                     </ul> 
                 </div>
                 <div class="top-bar-right">
                     <ul class="menu ">
-                        <li><a href="#">Log In</a></li>
+                        <li><a data-toggle="modal-login">Log In</a></li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-weibo"></i></a></li>
@@ -41,6 +42,73 @@
                     </ul>  
                 </div>
             </div>
+        </div>
+        <!-- Modals -->
+        <div class="reveal" id="modal-login" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+            <form>
+                <h3>Log In</h3>
+                <label>
+                    Username
+                    <input type="text" placeholder="Username or Email">
+                </label>
+                <label>
+                    Password
+                    <input type="text" placeholder="Password">
+                </label>
+                <a class="success button" href="#">Login</a>
+            </form>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="reveal" id="modal-register" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+            <form>
+                <h3>Register ~ Join us Today!</h3>
+                <label>
+                    First Name
+                    <input type="text" placeholder="First Name">
+                </label>
+                <label>
+                    Last Name
+                    <input type="text" placeholder="Last Name">
+                </label>
+                <label>
+                    Email Address
+                    <input type="text" placeholder="Email Address">
+                </label>
+                <label>
+                    Password
+                    <input type="text" placeholder="New Password">
+                </label>
+                <a class="success button" href="#">Register</a>
+            </form>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="reveal text-center" id="modal-select" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+            <img src="./data/pics/shop.svg">
+            <hr>
+            <p>Registered members receive access to a network of thousands of professional chefs and restaurants. Membership benefits include networking opportunities, access to online share communities, access to numerous resources, and real professional advice from experts.</p>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="reveal text-center" id="modal-choose" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+            <img src="./data/pics/dollar.svg">
+            <hr>
+            <p>Lessons are on demand and paid per session. Prices will always be reasonable and veteran members will receive discounts!</p>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="reveal text-center" id="modal-schedule" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+            <img src="./data/pics/fish.svg">
+            <hr>
+            <p>Our chefs are some of the most flexible in the world and our network is expansive. If your chef misses a lesson, you'll receive a complete refund and extra credit to schedule a lesson for another time!</p>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <!-- Banner -->
         <section id="main-section-home" class="row text-center full-width">
@@ -52,35 +120,35 @@
                 Your browser does not support the video tag.
             </video>    
         </section>
-        <section id="main-section-how-works" class="row text-center ">
-            <h2>How it works</h2>
+        <section id="main-section-how-works" class="row text-center">
+            <h2 id="second" data-magellan-target="second">How it works</h2>
             <p>Our network of professional chefs across the globe come to your home and teach you how to cook a delicious dish from their most popular restaurants. Each lesson is personally prepared by the chefs' themselves and are offered at reasonable prices. All you need to do is make some time!</p>
             <hr>
         </section>
-        <section id="main-section-modals" class="row text-center full-width ">
-            <div class="small-12 medium-4 large-4 columns">
+        <section id="main-section-modals" class="row text-center full-width">
+            <div class="small-12 medium-4 large-4 columns" data-toggle="modal-select">
                 <img src="./data/pics/chef.svg">
                 <hr>
                 <h2>Select a Chef</h2>
                 <p>Register as a member and use our app to select a professional chef from a restaurant near you.</p>
             </div>
-            <div class="small-12 medium-4 large-4 columns">
+            <div class="small-12 medium-4 large-4 columns" data-toggle="modal-choose">
                 <img src="./data/pics/dish.svg">
                 <hr>
                 <h2>Choose a Lesson</h2>
-                <p>Choose from a series of lessons that have been personally prepared by the chefs' themselves.</p>
+                <p>Choose from a series of cooking lessons that have been personally prepared by the chefs' themselves.</p>
             </div>
-            <div class="small-12 medium-4 large-4 columns">
+            <div class="small-12 medium-4 large-4 columns" data-toggle="modal-schedule">
                 <img src="./data/pics/calendar.svg">
                 <hr>
                 <h2>Schedule a Day</h2>
-                <p>Schedule a day that works for both yourself and the chef using an online calendar.</p>
+                <p>Schedule any day throughout the year that works for both yourself and the chef using our online calendar.</p>
             </div>
         </section>
         <section id="background-beg">
         </section>
         <section id="main-section-reviews" class="row text-center full-width ">
-            <br>
+            <br id="third" data-magellan-target="third">
             <h3>Read our reviews and see what members have made!</h3>
             <div class="carousel">
                 <div class="one-time">
@@ -129,7 +197,7 @@
         </section>
         <section id="background-end">
         </section>
-        <div class="footer ">
+        <div class="footer">
             <ul>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Contact</a></li>
@@ -142,6 +210,7 @@
         <!-- Scripts -->
         <script src="./lib/jquery-2.1.3.min/index.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.min.js"></script>
         <script src="./foundation6_lib/js/foundation.min.js"></script>
         <script src="./js/script.js"></script>
         <script>
