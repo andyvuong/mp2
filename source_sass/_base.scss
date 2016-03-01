@@ -124,8 +124,11 @@ section {
 
 .carousel {
     height: 90%;
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 2%;
+    padding-right: 2%;
     margin-top: 1%;
 
     .review-img {
@@ -154,6 +157,10 @@ section {
 
 .slick-prev:before, .slick-next:before { 
     color: #222 !important;
+}
+
+.slick-dots {
+    margin-left: 0;
 }
 
 .fancy {
@@ -225,4 +232,31 @@ section {
 @-webkit-keyframes fade-in {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+
+#opener {
+    @include vertical-align();
+    @include wh(350px, 400px);
+    position: absolute;
+    background-color: white;
+    border: 2px solid $green_darkest;
+    right: 10px;
+    -webkit-box-shadow: 0 10px 8px -6px black;
+       -moz-box-shadow: 0 10px 8px -6px black;
+            box-shadow: 0 10px 8px -6px black;
+
+    div {
+        text-align: center;
+        margin: auto;
+        width: 85%;
+
+        ul {
+            @include set-margin-sides();
+            li {
+                list-style: none;
+                text-align: center;
+            }
+        }
+    }
 }

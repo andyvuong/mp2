@@ -5,12 +5,30 @@ $(document).ready(function(){
      * Enable carousel code 
      */
     $(".one-time").slick({
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
         dots: true,
         infinite: true,
         speed: 400,
+        mobileFirst: true,
+        adaptiveHeight: true,
         slidesToShow: 1,
-        prevArrow: "<img class='a-left control-c prev slick-prev' src='../data/pics/left-chevron.svg'>",
-        nextArrow: "<img class='a-right control-c next slick-next' src='../data/pics/right-chevron.svg'>"
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    arrows: true,
+                    autoplay: false,
+                    dots: true,
+                    infinite: true,
+                    speed: 400,
+                    mobileFirst: true,
+                    adaptiveHeight: true,
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     /**
@@ -36,12 +54,48 @@ $(document).ready(function(){
     });
 
     /**
-     * Responsive JS handle footer
+     * Detect resizes and modify the footer if the screen is 'small'
      */
-     $(window).on('resize', function(){
-        footerRes()
-     });
+    $(window).on('resize', function() {
+        footerRes();
+        hideOpener();
+    });
 
+    /**
+     * 'Detect' when a resize event ends, execute the stickyFix function to handle the weird foundation resizing problem
+     * (actually just sets a small delay before running the callback)
+     */
+    var timer;
+    $(window).on('resize', function() {
+        clearTimeout(timer); // passing an invalid ID has no effect
+        timer = setTimeout(function() {
+            stickyFix();
+        }, 250);
+    });
+
+    // hide the opener
+    function hideOpener() {
+        var opener = $("#opener");
+        if (!Foundation.MediaQuery.atLeast('large')) {
+            if (opener.css("display").toLowerCase() !== "none") {
+                opener.css("display", "none");
+            }
+        }
+        else {
+            if (opener.css("display").toLowerCase() === "none") {
+                opener.css("display", "");
+            }
+        }
+    }
+
+     // fix the sticky nav
+     function stickyFix() {
+        if (!Foundation.MediaQuery.atLeast('medium')) {
+            $("#main-menu").css("max-width", "inherit");
+        }
+     }
+
+     // Removes lists elements so the footer acts more responsive and is clean.
     function footerRes() {
         var footer = $(".footer ul li:not(:nth-child(n+5))");
         var original = footer.css("display");
@@ -59,5 +113,6 @@ $(document).ready(function(){
 
     // call once to handle reloads
     footerRes();
-
+    stickyFix();
+    hideOpener();
 });

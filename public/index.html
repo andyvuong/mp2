@@ -17,16 +17,14 @@
     </head>
     <body data-magellan-target="first" id="first">
         <!-- Sticky -->
-        <div data-sticky-container>
-            <div class="top-bar responsive-bar-icons" data-sticky data-options="marginTop:0;" data-responsive-toggle="main-menu" data-hide-for="medium" data-sticky-on="small">
-                <button class="menu-icon" type="button" data-toggle></button>
-                <div class="title-bar-title">Menu</div>
-            </div>
+        <div class="top-bar responsive-bar-icons sticky-contain" data-options="marginTop:0;" data-responsive-toggle="sticky-fix" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">Menu</div>
         </div>
-        <div data-sticky-container>
+        <div data-sticky-container id="sticky-fix">
             <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0;" data-sticky-on="small">
                 <div class="top-bar-left">
-                    <ul class="menu" data-magellan>
+                    <ul class="menu vertical medium-horizontal" data-magellan >
                         <li class="menu-text">Le Chef</li>
                         <li><a href="#first">Home</a></li>
                         <li><a href="#second">How It Works</a></li>
@@ -35,7 +33,7 @@
                     </ul> 
                 </div>
                 <div class="top-bar-right">
-                    <ul class="menu ">
+                    <ul class="menu vertical medium-horizontal" >
                         <li><a data-toggle="modal-login">Log In</a></li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -43,6 +41,18 @@
                         <li><a href="#"><i class="fa fa-rebel"></i></a></li>
                     </ul>  
                 </div>
+            </div>
+        </div>
+        <div id="opener">
+            <div>
+                <h4>Dinner will never be the same!</h4>
+                <hr>
+                <ul>
+                    <li><p>Learn how to make a 5-star meal alongside a professional chef</p></li>
+                    <li><p>Receive lessons from chefs that are members of our global network</p></li>
+                    <li><p>Learn techniques and secrets that will last a lifetime</p></li>
+                    <li><p>Join an online food and cooking community and receive monthly newsletters and promotions</p></li>
+                </ul>
             </div>
         </div>
         <!-- Modals -->
