@@ -28,12 +28,36 @@ $(document).ready(function(){
         val = $(window).scrollTop();
         //console.log(val);
         if (val < 50) {
-            $("#main-menu").css("font-size", "1.2em");
+            $("#main-menu").css("font-size", "1.35em");
         }
         else if (val > 50 ) {
-            $("#main-menu").css("font-size", "0.75em");
+            $("#main-menu").css("font-size", "0.95em");
         }
     });
-    
+
+    /**
+     * Responsive JS handle footer
+     */
+     $(window).on('resize', function(){
+        footerRes()
+     });
+
+    function footerRes() {
+        var footer = $(".footer ul li:not(:nth-child(n+5))");
+        var original = footer.css("display");
+        if (!Foundation.MediaQuery.atLeast('medium')) {
+            if (footer.css("display").toLowerCase() !== "none") {
+                footer.css("display", "none");
+            }
+        }
+        else {
+            if (footer.css("display").toLowerCase() === "none") {
+                footer.css("display", "");
+            }
+        }  
+    }
+
+    // call once to handle reloads
+    footerRes();
 
 });

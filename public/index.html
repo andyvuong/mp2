@@ -17,12 +17,14 @@
     </head>
     <body data-magellan-target="first" id="first">
         <!-- Sticky -->
-        <div class="top-bar responsive-bar-icons" data-responsive-toggle="main-menu" data-hide-for="medium">
-            <button class="menu-icon" type="button" data-toggle></button>
-            <div class="title-bar-title">Menu</div>
+        <div data-sticky-container>
+            <div class="top-bar responsive-bar-icons" data-sticky data-options="marginTop:0;" data-responsive-toggle="main-menu" data-hide-for="medium" data-sticky-on="small">
+                <button class="menu-icon" type="button" data-toggle></button>
+                <div class="title-bar-title">Menu</div>
+            </div>
         </div>
         <div data-sticky-container>
-            <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0;" style="width:100%">
+            <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0;" data-sticky-on="small">
                 <div class="top-bar-left">
                     <ul class="menu" data-magellan>
                         <li class="menu-text">Le Chef</li>
@@ -146,9 +148,10 @@
             </div>
         </section>
         <section id="background-beg">
+            <div id="third" data-magellan-target="third"></div>
         </section>
         <section id="main-section-reviews" class="row text-center full-width ">
-            <br id="third" data-magellan-target="third">
+            <br>
             <h3>Read our reviews and see what members have made!</h3>
             <div class="carousel">
                 <div class="one-time">

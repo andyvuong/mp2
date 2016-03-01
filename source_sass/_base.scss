@@ -164,7 +164,14 @@ section {
 .top-bar {
     background-color: $turq_med;
     font-family: $primary-font;
-    @include fontSize(1.2em);
+    width: 100%;
+    @include fontSize(1.35em);
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 
     .menu-text {
         color: black;
