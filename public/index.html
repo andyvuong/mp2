@@ -17,12 +17,15 @@
     </head>
     <body data-magellan-target="first" id="first">
         <!-- Sticky -->
-        <div class="top-bar responsive-bar-icons sticky-contain" data-options="marginTop:0;" data-responsive-toggle="sticky-fix" data-hide-for="medium">
-            <button class="menu-icon" type="button" data-toggle></button>
-            <div class="title-bar-title">Menu</div>
-        </div>
         <div data-sticky-container id="sticky-fix">
-            <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0;" data-sticky-on="small">
+
+            <div class="sticky" data-sticky data-options="stickTo:top; stickyOn:small;">
+                <div class="top-bar responsive-bar-icons" data-responsive-toggle="main-menu" data-hide-for="medium">
+                    <button class="menu-icon" type="button" data-toggle></button>
+                    <div class="title-bar-title">Menu</div>
+                </div>
+            </div>
+            <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0; stickyOn:small">
                 <div class="top-bar-left">
                     <ul class="menu vertical medium-horizontal" data-magellan >
                         <li class="menu-text">Le Chef</li>
@@ -42,6 +45,7 @@
                     </ul>  
                 </div>
             </div>
+            
         </div>
         <div id="opener">
             <div>
