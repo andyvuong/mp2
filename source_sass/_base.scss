@@ -173,6 +173,7 @@ section {
     font-family: $primary-font;
     width: 100%;
     @include fontSize(1.35em);
+    padding: 0;
 
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;

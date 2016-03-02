@@ -76,7 +76,6 @@ $(document).ready(function(){
                 left.css("display", "none");
                 leftFirst.css("display", "none");
                 leftHome.text("Le Chef");
-                $(".sticky-container").css("height", $("#main-menu .top-bar-left").height()+25);
             }
             $(".sticky-container").css("height", $("#main-menu .top-bar-left").height()+25);
         }
@@ -87,7 +86,21 @@ $(document).ready(function(){
                 leftFirst.css("display", "");
                 leftHome.text("Home");
             }
+            $(".sticky-container").css("height", $("#main-menu .top-bar-left").height()+25);
         }  
+    }
+
+    // handle responsive
+    function resizeSticky() {
+        if ($("#main-menu").hasClass("is-at-top")) {
+            if (Foundation.MediaQuery.current === "medium") {
+                console.log(23);
+                $(".sticky-container").css("height", $("#main-menu .top-bar-left").height() + $("#main-menu .top-bar-right").height());
+            }
+            else { // anything else
+                $(".sticky-container").css("height", $("#main-menu .top-bar-left").height());
+            }
+        }
     }
 
     /**
@@ -99,6 +112,7 @@ $(document).ready(function(){
         clearTimeout(timer); // passing an invalid ID has no effect
         timer = setTimeout(function() {
             stickyFix();
+            resizeSticky();
         }, 250);
     });
 
