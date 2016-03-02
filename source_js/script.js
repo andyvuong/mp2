@@ -54,7 +54,8 @@ $(document).ready(function(){
     });
 
     /**
-     * Detect resizes and modify the footer if the screen is 'small'
+     * Executes code on the detection of a resize event. The code that run is used to handle the responsiveness
+     * of the footer, the resizing of the screen for the menu, and the opener (square information box)
      */
     $(window).on('resize', function() {
         footerRes();
@@ -90,9 +91,9 @@ $(document).ready(function(){
         }  
     }
 
-    // handle responsive
+    // handle responsive height of menu bar
     function resizeSticky() {
-        if ($("#main-menu").hasClass("is-at-top")) {
+        if ($("#main-menu").hasClass("is-anchored")) {
             if (Foundation.MediaQuery.current === "medium") {
                 console.log(23);
                 $(".sticky-container").css("height", $("#main-menu .top-bar-left").height() + $("#main-menu .top-bar-right").height());
@@ -104,8 +105,9 @@ $(document).ready(function(){
     }
 
     /**
-     * 'Detect' when a resize event ends, execute the stickyFix function to handle the weird foundation resizing problem
-     * (actually just sets a small delay before running the callback)
+     * Executes when a resize event ends, execute the stickyFix function to handle the weird foundation resizing problem with the menu.
+     * Also executes the resizing fix for the responsive menu.
+     * (just sets a small delay before running the callback)
      */
     var timer;
     $(window).on('resize', function() {
