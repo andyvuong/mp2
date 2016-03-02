@@ -95,7 +95,6 @@ $(document).ready(function(){
     function resizeSticky() {
         if ($("#main-menu").hasClass("is-anchored")) {
             if (Foundation.MediaQuery.current === "medium") {
-                console.log(23);
                 $(".sticky-container").css("height", $("#main-menu .top-bar-left").height() + $("#main-menu .top-bar-right").height());
             }
             else { // anything else
@@ -161,4 +160,9 @@ $(document).ready(function(){
     stickyFix();
     hideOpener();
     rightRes();
+
+    $(".sticky-container").css("height", $("#main-menu .top-bar-left").height()); 
+    if (Foundation.MediaQuery.current === "medium") {
+            $(".sticky-container").css("height", $("#main-menu .top-bar-left").height() + $("#main-menu .top-bar-right").height());
+    }
 });
