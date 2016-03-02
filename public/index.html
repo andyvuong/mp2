@@ -16,37 +16,29 @@
         <link rel="icon" type="image/png" sizes="32x32" href="./data/pics/favicon.ico">
     </head>
     <body data-magellan-target="first" id="first">
-        <!-- Sticky -->
-        <div data-sticky-container id="sticky-fix">
-
-            <div class="sticky" data-sticky data-options="stickTo:top; stickyOn:small;">
-                <div class="top-bar responsive-bar-icons" data-responsive-toggle="main-menu" data-hide-for="medium">
-                    <button class="menu-icon" type="button" data-toggle></button>
-                    <div class="title-bar-title">Menu</div>
-                </div>
+       
+    <div data-sticky-container>
+        <div class="top-bar .stack-nav-1" id="main-menu" data-sticky data-options="marginTop:0;" style="width:100%" data-sticky-on="small">
+            <div class="top-bar-left">
+                <ul class="menu vertical medium-horizontal" data-magellan>
+                    <li class="menu-text">Le Chef</li>
+                    <li><a href="#first">Home</a></li>
+                    <li><a href="#second">How It Works</a></li>
+                    <li><a href="#third">Reviews</a></li>
+                    <li><a data-toggle="modal-register">Register</a></li>
+                </ul> 
             </div>
-            <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0; stickyOn:small">
-                <div class="top-bar-left">
-                    <ul class="menu vertical medium-horizontal" data-magellan >
-                        <li class="menu-text">Le Chef</li>
-                        <li><a href="#first">Home</a></li>
-                        <li><a href="#second">How It Works</a></li>
-                        <li><a href="#third">Reviews</a></li>
-                        <li><a data-toggle="modal-register">Register</a></li>
-                    </ul> 
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu vertical medium-horizontal" >
-                        <li><a data-toggle="modal-login">Log In</a></li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-weibo"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rebel"></i></a></li>
-                    </ul>  
-                </div>
+            <div class="top-bar-right">
+                <ul class="menu vertical medium-horizontal" >
+                    <li><a data-toggle="modal-login">Log In</a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-weibo"></i></a></li>
+                    <li><a href="#"><i class="fa fa-rebel"></i></a></li>
+                </ul>  
             </div>
-            
         </div>
+    </div>
         <div id="opener">
             <div>
                 <h4>Dinner will never be the same!</h4>
@@ -131,7 +123,7 @@
             <h2 class="fancy">Learn how to make a dinner for loved ones that's worth eating!</h2>
         </section>
         <section class="video">
-            <video muted loop>
+            <video muted loop autoplay>
                 <source src="./data/video/video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>    

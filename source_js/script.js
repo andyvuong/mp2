@@ -59,7 +59,36 @@ $(document).ready(function(){
     $(window).on('resize', function() {
         footerRes();
         hideOpener();
+        rightRes();
     });
+
+    // Removes elements to make mobile menu responsive
+    function rightRes() {
+        var right = $("#main-menu .top-bar-right");
+        var left = $("#main-menu .top-bar-left ul li:last-child");
+        var leftFirst = $("#main-menu .top-bar-left ul li:first-child");
+        var leftHome = $("#main-menu .top-bar-left ul li:nth-child(2) a");
+
+        var original = right.css("display");
+        if (!Foundation.MediaQuery.atLeast('medium')) {
+            if (right.css("display").toLowerCase() !== "none") {
+                right.css("display", "none");
+                left.css("display", "none");
+                leftFirst.css("display", "none");
+                leftHome.text("Le Chef");
+                $(".sticky-container").css("height", $("#main-menu .top-bar-left").height()+25);
+            }
+            $(".sticky-container").css("height", $("#main-menu .top-bar-left").height()+25);
+        }
+        else {
+            if (right.css("display").toLowerCase() === "none") {
+                right.css("display", "");
+                left.css("display", "");
+                leftFirst.css("display", "");
+                leftHome.text("Home");
+            }
+        }  
+    }
 
     /**
      * 'Detect' when a resize event ends, execute the stickyFix function to handle the weird foundation resizing problem
@@ -115,4 +144,5 @@ $(document).ready(function(){
     footerRes();
     stickyFix();
     hideOpener();
+    rightRes();
 });
